@@ -5,7 +5,7 @@
 [Development]()
 
   * [Plugin](dev/plugin.md)
-  * [Theme](dev/them.md)
+  * [Theme](dev/theme.md)
   * [System](dev/system.md)
   - - - -
   * # Advanced
