@@ -1,0 +1,7 @@
+{
+    "useSideMenu": true,
+    "lineBreaks": "gfm",
+    "additionalFooterText": "PHPNuxBill is Free and Open Source and without any warranty, use with your own risk",
+    "anchorCharacter": "&#x2693;",
+    "title": "PHPNuxBill - PHP Mikrotik Billing"
+}
