@@ -23,7 +23,7 @@
   * [IP Pool](tutorials/pool.md)
   * [Plan](tutorials/plan.md)
 
-[Donation](donations.md)
+[Donation](donate.md)
 [Community Support](https://t.me/phpnuxbill)
 [Contact](https://t.me/ibnux)
 [gimmick:theme](flatly)
