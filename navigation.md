@@ -26,3 +26,4 @@
 [Donation](donations.md)
 [Community Support](https://t.me/phpnuxbill)
 [Contact](https://t.me/ibnux)
+[gimmick:theme](flatly)
