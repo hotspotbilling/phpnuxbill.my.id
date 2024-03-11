@@ -1,6 +1,6 @@
 # PHPNuxBill - PHP Mikrotik Billing
 
-![PHPNuxBill](https://github.com/hotspotbilling/phpnuxbill/blob/master/install/img/logo.png)
+![PHPNuxBill](https://github.com/hotspotbilling/phpnuxbill/blob/master/install/img/logo.png?raw=true)
 
 Is Free and Open source PHP Mikrotik Billing, Without any Warranty
 
