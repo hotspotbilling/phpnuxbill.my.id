@@ -1,5 +1,5 @@
 
-## Donate to ibnux
+# Donate The Projects
 
 [![Paypal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/ibnux) 
 [![Wise](https://img.shields.io/badge/Wise-394e79?style=for-the-badge&logo=wise&logoColor=00B9FF)]([https://paypal.me/ibnux](https://wise.com/pay/me/ibnum37))
