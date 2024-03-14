@@ -24,6 +24,11 @@
   * [Plan](tutorials/plan.md)
 
 [Donation](donate.md)
-[Community Support](https://t.me/phpnuxbill)
-[Contact](https://t.me/ibnux)
+
+[Community Support]()
+
+  * [Telegram](https://t.me/phpnuxbill)
+  * [Facebook](https://www.facebook.com/groups/1404570750225597/?ref=share)
+
+[Paid Support](https://t.me/ibnux)
 [gimmick:theme](flatly)
