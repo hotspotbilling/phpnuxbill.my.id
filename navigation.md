@@ -11,7 +11,9 @@
   * # Advanced
   * [Customizing](customizing.md)
 
-[Download](gimmicks.md)
+[Download]()
+  * [PHPNuxBill](https://github.com/hotspotbilling/phpnuxbill/archive/refs/heads/master.zip)
+  * [Source Code](https://github.com/hotspotbilling/phpnuxbill)
 
 [Tutorials]()
 
