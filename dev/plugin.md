@@ -2,8 +2,20 @@
 
 You can create Plugin or Payment Gateway for PHPNuxBill
 
+## Naming convention 
+
+all your function must be started with your file name, example `port_tester.php` so all function must be started with `port_tester`
+
+- `port_tester_get_port()`
+- `port_tester_check()`
+
+So it will not conflict with other plugin
+
 ## Plugin
 
+Plugin is used to modify system to add what you need. all plugin installed inside folder `system/plugin`
+
+### Menu
 To Integrate with menu just call this function
 
 ```php
@@ -23,7 +35,7 @@ To Integrate with menu just call this function
 function register_menu($name, $admin, $function, $position, $icon = '', $label = '', $color = 'success', $auth = []);
 
 // Example
-register_menu("Port Tester", true, "port_tester", 'SETTINGS', '');
+register_menu("Port Tester", true, "filename", 'SETTINGS', '');
 ```
 
 then you need to create function with name `port_tester`
@@ -57,3 +69,73 @@ function port_tester()
 ```
 
 for `.tpl` file, you need to put to folder `ui`
+
+see the example in [port tester](https://github.com/hotspotbilling/plugin-test-port/blob/main/port_tester.php) plugin
+
+To know where to put menu, see the [`header.tpl`](https://github.com/hotspotbilling/phpnuxbill/blob/6f5d49cd2fe982f58e8b3b504b97cf553269cad2/ui/ui/sections/header.tpl#L167) and [`user-header.tpl`](https://github.com/hotspotbilling/phpnuxbill/blob/6f5d49cd2fe982f58e8b3b504b97cf553269cad2/ui/ui/sections/user-header.tpl#L148)
+
+there will be `{$_MENU_AFTER_CUSTOMERS}` then the position will be `AFTER_CUSTOMERS`
+
+### Webhook
+
+You can put your function code to run to some hook, example in [send_sms](https://github.com/hotspotbilling/phpnuxbill/blob/6f5d49cd2fe982f58e8b3b504b97cf553269cad2/system/autoload/Message.php#L25)
+
+you want to run some code before sending sms, then add the hook to send_sms
+
+```php
+register_hook('send_sms', 'filename_my_function');
+
+function filename_my_function(){
+
+}
+```
+
+## Payment Gateway
+
+To integrate with payment Gateway you just create the plugin, and installed inside folder `system/paymentgateway`, see [paypal for example](https://github.com/hotspotbilling/phpnuxbill-paypal/blob/main/paypal.php).
+
+core function for payment Gateway are
+
+```php
+// Before create transaction, PHPNuxBill will 
+function filename_validate_config()
+{
+    global $config;
+    if (empty($config['filename_merchant_key'])) {
+        Message::sendTelegram("filename payment gateway not configured");
+        r2(U . 'order/package', 'w', Lang::T("Admin has not yet setup Duitku payment gateway, please tell admin"));
+    }
+}
+
+// this to configure from admin
+function filename_show_config()
+{
+    global $ui, $config;
+    $ui->assign('_title', 'filename - Payment Gateway');
+    $ui->display('filename.tpl');
+}
+
+function filename_save_config()
+{
+    // to save config must go to this function
+}
+
+function filename_create_transaction($trx, $user)
+{
+    global $config, $routes, $ui;
+    // this will called when customer want to pay to create transaction
+}
+
+function filename_payment_notification()
+{
+    // this for getting webhook or notification from payment gateway
+    // need to be exists even not configured
+}
+
+function filename_get_status($trx, $user)
+{
+    // this when customer want to check if payment success manually
+}
+
+```
+
